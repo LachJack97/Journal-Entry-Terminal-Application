@@ -97,6 +97,7 @@ while user_state == 'Logged Out':
                         read_journal()
         
                 if user_action == actions[2]:
+                        print("You are being logged out")
                         user_state = 'Logged Out'
                 
                 
