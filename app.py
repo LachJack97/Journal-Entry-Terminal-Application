@@ -1,6 +1,5 @@
 from datetime import datetime
 
-
 # Lists
 actions = ['New Entry', 'Delete Entry', 'Log Out', 'Read Entry']
 journal_entry_titles = []
