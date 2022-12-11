@@ -93,3 +93,8 @@ As stated in the last step of the development plan, the code base can be reused 
   
 
 The log out action is what will close off the while loop created in the first stage. Once this action has been entered, the user state will change to logged out and the whole program will run back to the beginning.
+
+
+**Install/Run Guide**
+
+The program requires only that the user has access to a Python compiler/interpreter. The latest release from https://www.python.org/ will suffice for this as it is simple to install and the user will be able to access the program instantly. From here the user can launch Python and load the script that I have uploaded inside the zip file. From here, the user need only follow the prompts on the screen to go through their experience using the program, ensuring that their inputs are case sensitive to what is being prompted on the screen.
