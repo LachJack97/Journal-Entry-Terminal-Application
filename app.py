@@ -12,7 +12,7 @@ username = ""
 user_action = ""
 journal_entry = ""
 delete_journal_entry = ""
-read_journal_entry = ""
+
 
 
 def log_in():
@@ -25,15 +25,14 @@ def log_in():
                 print(username)
                 user_state = 'Logged in'
         else:
-                print("Please enter your username here")
+                print("Please enter your username here.   ")
                 print(username)
                 user_state = 'Logged in'
 
 
 def new_journal_entry():
         user_state = 'journal_entry'
-        print(user_state)
-        new_journal = input("Please enter a title")                                
+        new_journal = input("Please enter a title   ")                                
         journal_entry_titles.append(new_journal)
         print(journal_entry_titles[-1])
         journal_entry = input("Please write your journal entry here...")
@@ -44,28 +43,28 @@ def read_journal():
         print(user_state)
         print("Which journal entry would you like to read?")
         print(journal_entry_titles)
-        read_journal_entry = input("")
-        if read_journal_entry == journal_entry_titles[0]:
-                print(journal_entry_list[0])
-        elif read_journal_entry == journal_entry_titles[1]:
-                print(journal_entry_list[1])
-        elif read_journal_entry == journal_entry_titles[1]:
-                print(journal_entry_list[1])
-        
+        i = input("")
+        e = journal_entry_titles.index(i)
+
+        for x in journal_entry_titles:
+                if x == e:
+                        break
+                print(journal_entry_titles[e])
+                print(journal_entry_list[e])
+                break
 
 def journal_delete():
         print("Which journal entry would you like to delete?")
         print(journal_entry_titles)
-        delete_journal_entry = input("")
-        if delete_journal_entry == journal_entry_titles[0]:
-                del journal_entry_titles[0]
-                del journal_entry_list[0]
-        elif delete_journal_entry == journal_entry_titles[1]:
-                del journal_entry_titles[1]
-                del journal_entry_list[1]
-        elif delete_journal_entry == journal_entry_titles[2]:
-                del journal_entry_titles[2]
-                del journal_entry_list[2]
+        i = input("")
+        e = journal_entry_titles.index(i)
+
+        for x in journal_entry_titles:
+                if x == e:
+                        break
+                journal_entry_titles.remove(e)
+                journal_entry_list.remove(e)
+                break  
 
 while user_state == 'Logged Out':
         print("Welcome to your personal journal")
