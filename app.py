@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 # Lists
 actions = ['New Entry', 'Delete Entry', 'Log Out', 'Read Entry']
 journal_entry_titles = []
@@ -28,6 +31,7 @@ def log_in():
 
 def new_journal_entry():
         user_state = 'journal_entry'
+        print("--------------------------------------------------")
         new_journal = input("Please enter a title   ")                                
         journal_entry_titles.append(new_journal)
         print(journal_entry_titles[-1])
@@ -36,7 +40,7 @@ def new_journal_entry():
 
 def read_journal():
         user_state = 'read_journal_entry'
-        print(user_state)
+        print("--------------------------------------------------")
         print("Which journal entry would you like to read?")
         print(journal_entry_titles)
         i = input("")
@@ -45,11 +49,13 @@ def read_journal():
         for x in journal_entry_titles:
                 if x == e:
                         break
+                print("--------------------------------------------------")
                 print(journal_entry_titles[e])
                 print(journal_entry_list[e])
                 break
 
 def journal_delete():
+        print("--------------------------------------------------")
         print("Which journal entry would you like to delete?")
         print(journal_entry_titles)
         i = input("")
@@ -68,6 +74,8 @@ while user_state == 'Logged Out':
         log_in()
 
         while user_state == 'Logged in':
+                print("--------------------------------------------------")
+                print("Today's date is: " + datetime.today().strftime('%d-%m-%y'))
                 print('What would you like to do?', actions)
                 user_action = input('Please choose one of the options from above....')
                 if user_action == actions[0]:
