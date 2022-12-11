@@ -17,9 +17,11 @@ delete_journal_entry = ""
 
 def log_in():
         
-        user = input("Are you a new user here?   ")
+        user = input("Are you a new user here? yes/no ---  ")
+        print("--------------------------------------------------")
         global user_state
-
+        global username
+        
         if user == 'yes':
                 username = input("Please enter a new username here...")
                 print(username)
@@ -28,6 +30,9 @@ def log_in():
                 print("Please enter your username here.   ")
                 print(username)
                 user_state = 'Logged in'
+        else:
+                print("Please enter a yes or no response.")
+                print("--------------------------------------------------")
 
 def new_journal_entry():
         user_state = 'journal_entry'
@@ -35,7 +40,8 @@ def new_journal_entry():
         new_journal = input("Please enter a title   ")                                
         journal_entry_titles.append(new_journal)
         print(journal_entry_titles[-1])
-        journal_entry = input("Please write your journal entry here...")
+        print("Please write your journal entry here...")
+        journal_entry = input("")
         journal_entry_list.append(journal_entry)
 
 def read_journal():
@@ -64,17 +70,20 @@ def journal_delete():
         for x in journal_entry_titles:
                 if x == e:
                         break
-                journal_entry_titles.remove(e)
-                journal_entry_list.remove(e)
+                del journal_entry_titles[e]
+                del journal_entry_list[e]
                 break  
 
 while user_state == 'Logged Out':
+        print("--------------------------------------------------")
         print("Welcome to your personal journal")
+        print("--------------------------------------------------")
 
         log_in()
 
         while user_state == 'Logged in':
                 print("--------------------------------------------------")
+                print("Currently Logged in as: ", username)
                 print("Today's date is: " + datetime.today().strftime('%d-%m-%y'))
                 print('What would you like to do?', actions)
                 user_action = input('Please choose one of the options from above....')
