@@ -1,6 +1,3 @@
-import datetime
-
-
 # Lists
 actions = ['New Entry', 'Delete Entry', 'Log Out', 'Read Entry']
 journal_entry_titles = []
@@ -28,7 +25,6 @@ def log_in():
                 print("Please enter your username here.   ")
                 print(username)
                 user_state = 'Logged in'
-
 
 def new_journal_entry():
         user_state = 'journal_entry'
