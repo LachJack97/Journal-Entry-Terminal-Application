@@ -1,6 +1,6 @@
 **Journal Entry - Terminal Application**
 
-  
+  The program being presented here is a simple user Journal Entry terminal application. While in it is a simple application it contains features one may find when looking to create their own journal/diary entries. 
 
 **Features**:
 
