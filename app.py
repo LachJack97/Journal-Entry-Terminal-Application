@@ -20,11 +20,11 @@ def log_in():
         user = input("Are you a new user here?   ")
         global user_state
 
-        if user == 'no' or 'yes':
+        if user == 'yes':
                 username = input("Please enter a new username here...")
                 print(username)
                 user_state = 'Logged in'
-        else:
+        elif user == 'no':
                 print("Please enter your username here.   ")
                 print(username)
                 user_state = 'Logged in'
